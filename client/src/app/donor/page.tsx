@@ -2,6 +2,16 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useRouter } from 'next/router';
 // import Footer from './Footer';
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+import {
+  IconBrandGithub,
+  IconBrandGoogle,
+  IconBrandOnlyfans,
+} from "@tabler/icons-react";
+import { FileUpload } from "@/components/ui/file-upload";
+import Link from 'next/link';
 
 interface FormData {
   firstName: string;
@@ -120,17 +130,17 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className='FORMLAYOUT' >
-    <div className='donationForm flex flex-col md:flex-row items-center justify-center  gap-3' >
-      <div className='imgContainer'>
-      <img className='formimg hidden md:block' src="/image 2.jpg" alt="" /> {/* Hide image on mobile screens */}
-      </div>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-2 w-full md:w-1/2'> {/* Full width on mobile */}
+    <div className=''  >
+      <Link className='mt-20 ml-20 text-md bg-red-900 px-4 py-2 rounded' href='/'>Home</Link>
+    <div className='donationForm flex flex-col items-center justify-center  gap-3' >
+     <p className='mt-5 text-4xl font-bold'>Donation Form</p>
+
+      <form onSubmit={handleSubmit} className='flex flex-col border border-red-900  p-8 rounded-xl   gap-2 w-full md:w-1/2'> 
         {currentStep === 1 && (
           <>
             <p className='heading mt-4 flex'>Name<span className='text-sm text-red-600'>*</span></p>
             <div className='flex flex-col md:flex-row gap-4'>
-              <input
+              <Input
                 className='short'
                 type="text"
                 name="firstName"
@@ -139,7 +149,7 @@ const Form: React.FC = () => {
                 onChange={handleChange}
                 required
               />
-              <input
+              <Input
                 className='short'
                 type="text"
                 name="lastName"
@@ -149,7 +159,7 @@ const Form: React.FC = () => {
               />
             </div>
             <p className='heading flex'>Registration Number<span className='text-sm text-red-600'>*</span></p>
-            <input
+            <Input
               className='long'
               type="text"
               name="registrationNumber"
@@ -159,7 +169,7 @@ const Form: React.FC = () => {
               required
             />
             <p className='heading'>Mobile Number<span className='text-sm text-red-600'>*</span></p>
-            <input
+            <Input
               className='long'
               type="tel"
               name="mobileNumber"
@@ -169,7 +179,7 @@ const Form: React.FC = () => {
               required
             />
             <p className='heading'>SRM Email address<span className='text-sm text-red-600'>*</span></p>
-            <input
+            <Input
               className='long'
               type="email"
               name="email"
@@ -182,7 +192,7 @@ const Form: React.FC = () => {
             <div className='flex flex-row md:flex-row items-start'> 
               <div> 
                 <p className='heading mb-1'>Date Of Birth<span className='text-sm text-red-600'>*</span></p>
-                <input
+                <Input
                   className='short placeholder-gray-500' 
                   type="date"
                   name="dob"
@@ -194,7 +204,7 @@ const Form: React.FC = () => {
               </div>  
               <div>
                 <p className='heading ml-1 mb-1'>Height<span className='text-sm text-red-600'>*</span></p>
-                <input
+                <Input
                   className='short ml-1 placeholder-gray-500' 
                   type="number"
                   name="height"
@@ -210,7 +220,7 @@ const Form: React.FC = () => {
             <div className='flex flex-row  md:flex-row items-center'> 
               <div> 
                 <p className='heading mb-1'>Weight<span className='text-sm text-red-600'>*</span></p>
-                <input
+                <Input
                   className='short'
                   type="number"
                   name="weight"
@@ -223,7 +233,7 @@ const Form: React.FC = () => {
               <div>
                 <p className='heading ml-3 mb-1'>Blood Group<span className='text-sm text-red-600'>*</span></p>
                 <select
-                  className='select ml-3 pr-2'
+                  className='select ml-3 px-4 rounded-lg py-3'
                   name="bloodGroup"
                   value={formData.bloodGroup}
                   onChange={handleChange}
@@ -246,7 +256,7 @@ const Form: React.FC = () => {
             <div className='flex flex-col md:flex-row'> 
               <div> 
                 <p className='heading mb-1'>Last Donated</p>
-                <input
+                <Input
                   className='short'
                   type="date"
                   name="lastDonated"
@@ -257,21 +267,21 @@ const Form: React.FC = () => {
               <div>
                 <p className='heading ml-3 mb-1'>Certificate</p>
                 <div className='flex items-center ml-3 '>
-                  <label className="file-input-label cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                  <label className="file-input-label cursor-pointer bg-red-900 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
                     Select Certificate
                     <input
                       type="file"
                       name="certificate"
                       onChange={handleFileChange}
                       required
-                      className="hidden" /* Hide default file input */
+                      className="hidden" 
                     />
                   </label>
                 </div>
               </div>   
             </div>
 
-            <button className=' nextBtn mb-4' type="button" onClick={handleNext}>Become a Donor</button>
+            <button className=' bg-red-900 py-2 rounded-xl mb-5' type="button" onClick={handleNext}>Become a Donor</button>
           </>
         )}
 
@@ -312,7 +322,7 @@ const Form: React.FC = () => {
             <div>
               <label className='medicalconditionstext'>Do you have Diabetes on Insulin Injection?</label>
               <input
-                type="checkbox"
+               type="checkbox"
                 name="isDiabetes"
                 checked={formData.isDiabetes}
                 onChange={handleChange}
@@ -438,16 +448,36 @@ const Form: React.FC = () => {
             </div>
             </div>
 
-            <button className='submitbtn ' type="submit">Submit</button>
+            <button className=' bg-red-900 py-2 rounded-xl mb-5 ' type="submit">Submit</button>
           </>
         )}
       </form>
     </div>
-    <div className=''>
-    {/* <Footer /> */}
-    </div>
+ 
     </div >
   );
 };
-
+ 
+const BottomGradient = () => {
+  return (
+    <>
+      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+    </>
+  );
+};
+ 
+const LabelInputContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("flex flex-col space-y-2 w-full", className)}>
+      {children}
+    </div>
+  );
+};
 export default Form;
