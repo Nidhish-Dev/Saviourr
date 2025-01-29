@@ -15,7 +15,7 @@ function About() {
         "An aspiring full stack developer really passionate about web development. Persuing BTech CSE Software Engineering from SRMIST, my passion for technology brought me here. I love bringing ideas to real world.",
       name: "Paras ",
       designation: "Full-Stack Developer",
-      src: "/paras.jpg",
+      src: "/paras.JPG",
     },
    
   ];

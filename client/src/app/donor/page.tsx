@@ -397,11 +397,66 @@ const Form: React.FC = () => {
               {/* Modal body */}
               <div className="p-4 md:p-5 space-y-4">
                 <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                Certain individuals are at higher risk of transmitting infections or experiencing health complications from blood donation. These include:
+Individuals with Infectious Diseases
+<br />
+	•	HIV/AIDS carriers or those with high-risk exposure to HIV
+  <br />
+	•	Hepatitis B or C patients (current or past infections)
+  <br />
+	•	Syphilis, Malaria, or Tuberculosis (TB) patients
+  <br />
+	•	People with chronic bacterial or viral infections
+  <br />
+
+People with High-Risk Lifestyles
+<br />
+	•	Intravenous (IV) drug users (even past users)
+  <br />
+	•	Individuals with multiple sexual partners or engaged in high-risk sexual activities
+  <br />
+	•	People who have received unregulated tattoos or piercings in the last 6 months
+  <br />
+
+Individuals with Chronic Medical Conditions
+<br />
+	•	Cancer survivors (especially blood-related cancers like leukemia, lymphoma)
+  <br />
+	•	Heart disease patients (heart attack, bypass surgery, severe hypertension)
+  <br />
+	•	Severe diabetic patients with complications
+  <br />
+	•	Patients with kidney or liver failure
+  <br />
+	•	People with severe anemia or hemophilia
+  <br />
+
+Individuals with Recent Medical History
+
+<br />
+	•	Those who have had major surgery or a blood transfusion in the last 6 months
+  <br />
+	•	Organ transplant recipients
+  <br />
+	•	Pregnant or postpartum women (less than 6 months postpartum)
+  <br />
+	•	People recently vaccinated with live virus vaccines (e.g., measles, rubella, yellow fever, COVID-19 in certain cases)
+  <br />
+
+Individuals with Genetic or Blood Disorders
+<br />
+	•	Sickle Cell Disease (but carriers can donate)
+  <br />
+	•	Thalassemia Major patients
+  <br />
+	•	People with clotting disorders like Hemophilia
+  <br />
+
+These individuals are either at risk of transmitting infections or could suffer health complications from blood donation. Screening before donation helps ensure safety for both the donor and recipient.
                 </p>
-                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                {/* <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                   The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
+                </p> */}
               </div>
 
               {/* Modal footer */}
