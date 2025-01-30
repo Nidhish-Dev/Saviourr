@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
-      <div className="px-12 rounded-3xl">
-        <ul className="flex gap-5 text-center justify-center items-center py-4">
+      <div className="fixed top-0 left-0 right-0 px-12 py-4 bg-black rounded-b-3xl z-10 bg-opacity-35 shadow-md">
+        <ul className="flex gap-5 text-center justify-center items-center">
           <li>
             <Link href="#hero">Home</Link>
           </li>
@@ -24,21 +24,17 @@ export default function Home() {
         </ul>
       </div>
 
-
-      <div id="hero">
+      <div id="hero" className="mt-20"> {/* Add margin-top to prevent navbar from overlapping */}
         <Hero />
       </div>
-
 
       <div id="why-saviourr">
         <WhySaviour />
       </div>
 
-
       <div id="about-us">
         <About />
       </div>
-
 
       <footer className="py-4 text-center mt-auto">
         © Copyright 2025 Saviourr. All Rights Reserved

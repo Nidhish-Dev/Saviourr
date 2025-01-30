@@ -108,7 +108,7 @@ const Form: React.FC = () => {
     });
 
     try {
-      const response = await fetch('http://localhost:8000/api/form/submit', {
+      const response = await fetch('https://saviourr-server.vercel.app/api/form/submit', {
         method: 'POST',
         body: form, 
       });

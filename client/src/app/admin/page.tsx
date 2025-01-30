@@ -36,7 +36,7 @@ function AdminData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/form');
+        const response = await fetch('https://saviourr-server.vercel.app/api/form');
         const data = await response.json();
         setFormData(data);
         setFilteredData(data);

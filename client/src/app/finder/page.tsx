@@ -40,7 +40,7 @@ function Page() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8000/api/form/seeker', {
+      const response = await fetch('https://saviourr-server.vercel.app/api/form/seeker', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
