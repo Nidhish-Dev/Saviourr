@@ -10,7 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: '*', // or specific origins like ['https://yourfrontend.vercel.app']
+    methods: 'GET, POST, PUT, DELETE', // Allow specific methods
+    allowedHeaders: 'Content-Type, Authorization' // Adjust as needed
+  }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.json())
